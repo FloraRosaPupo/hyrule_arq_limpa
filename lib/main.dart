@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:hyrule/screens/categorys.dart';
+
+void main() {
+  runApp(const Hyrule());
+}
+
+class Hyrule extends StatelessWidget {
+  const Hyrule({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Hyrule',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorSchemeSeed: Colors
+            .blue, //colorSchemeSeed é um valor de cor que é usado para gerar um esquema de cores para o tema
+        brightness:
+            Brightness.dark, //brightness é a luminosidade do tema -> escuro
+        useMaterial3: true,
+      ),
+      home: SafeArea(
+        //SafeArea widget é usado para garantir que o conteúdo não seja cortado em dispositivos menores
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Escolha uma categoria'),
+            centerTitle: true,
+          ),
+          body: const Categorys(),
+        ),
+      ),
+    );
+  }
+}
