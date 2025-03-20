@@ -12,21 +12,32 @@ class _CardCreatureState extends State<CardCreature> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      ),
+          borderRadius: BorderRadius.circular(10),
+          color: Color(202429),
+          ),
       child: Column(
         children: [
-          const Row(
+          Row(
             children: [
-              Image(
-                image: AssetImage('assets/images/creatures.png'),
+              Container(
                 width: 100,
                 height: 100,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: const Expanded(
+                  child: Image(
+                    //consumir da api
+                    image: AssetImage('assets/images/creatures.png'),
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
               ),
-              Column(
+              const Column(
                 children: [
+                  //consumir da api
                   Text('Nome:'),
                   Text('Descrição:'),
                 ],
