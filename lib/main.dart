@@ -12,16 +12,18 @@ class Hyrule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Hyrule',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorSchemeSeed: Colors
-              .blue, //colorSchemeSeed é um valor de cor que é usado para gerar um esquema de cores para o tema
-          brightness:
-              Brightness.dark, //brightness é a luminosidade do tema -> escuro
-          useMaterial3: true,
-        ),
-        home: Scaffold(
+      title: 'Hyrule',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorSchemeSeed: Colors
+            .blue, //colorSchemeSeed é um valor de cor que é usado para gerar um esquema de cores para o tema
+        brightness:
+            Brightness.dark, //brightness é a luminosidade do tema -> escuro
+        useMaterial3: true,
+      ),
+      home: Creatures(),
+    );
+    /*Scaffold(
           appBar: AppBar(
             title: const Text(
               'Escolha uma categoria',
@@ -29,6 +31,6 @@ class Hyrule extends StatelessWidget {
             centerTitle: true,
           ),
           body: const SafeArea(child: Categorys()),
-        ));
+        ));*/
   }
 }
