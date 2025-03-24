@@ -11,13 +11,10 @@ class Creatures extends StatelessWidget {
         title: const Text('Creatures'),
         actions: [
           IconButton(
-            icon: Icon(Icons.save),
+            icon: Icon(Icons.bookmark),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(Icons.delete),
-            onPressed: () {},
-          ),
+          
         ],
       ),
       body: Padding(
