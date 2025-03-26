@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hyrule/screens/creatures.dart';
+import 'package:hyrule/utils/consts/categorys.dart';
 
 class CardCategorys extends StatefulWidget {
-  final Image image;
-  final String text;
+  final String category;
 
-  const CardCategorys({super.key, required this.image, required this.text});
+  const CardCategorys({super.key, required this.category});
 
   @override
   State<CardCategorys> createState() => _CardCategorysState();
@@ -13,34 +14,39 @@ class CardCategorys extends StatefulWidget {
 class _CardCategorysState extends State<CardCategorys> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 0.35,
-            height: MediaQuery.of(context).size.width * 0.35,
-            child: widget.image,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Color.fromRGBO(0, 73, 125, 1)),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 73, 125, 1),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: const Offset(0, 3),
-                ),
-              ],
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Creatures(category: widget.category)));
+      },
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.35,
+              height: MediaQuery.of(context).size.width * 0.35,
+              child: Image.asset('$imagePath${widget.category}.png'),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Color.fromRGBO(0, 73, 125, 1)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 73, 125, 1),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Text(widget.text,
-              style: const TextStyle(
-                  fontSize: 20, color: Color.fromRGBO(0, 73, 125, 1))),
-        ],
+            const SizedBox(height: 20),
+            Text(categories[widget.category]!,
+                style: const TextStyle(
+                    fontSize: 20, color: Color.fromRGBO(0, 73, 125, 1))),
+          ],
+        ),
       ),
     );
   }

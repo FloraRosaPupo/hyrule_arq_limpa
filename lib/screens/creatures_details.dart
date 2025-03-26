@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/screens/components/creatures/card_commonLocations.dart';
 
 class CreaturesDetails extends StatelessWidget {
   const CreaturesDetails({super.key});
@@ -31,11 +30,8 @@ class CreaturesDetails extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Wrap(
-                      children: [
-                        CardCommonlocations(),
-                      ],
-                    ),
+                    
+                    
                     SizedBox(
                       height: 20,
                     ),

@@ -22,7 +22,7 @@ class Items extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  CardCreature(),
+                  
                 ],
               )),
         ));
