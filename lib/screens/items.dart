@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/screens/components/card_categorys.dart';
-import 'package:hyrule/screens/components/creatures/card_commonLocations.dart';
+//import 'package:hyrule/screens/components/card_categorys.dart';
+//import 'package:hyrule/screens/components/creatures/card_commonLocations.dart';
 import 'package:hyrule/screens/components/creatures/card_creature.dart';
 
 class Items extends StatelessWidget {
