@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyrule/screens/categorys.dart';
-//import 'package:hyrule/screens/categorys.dart';
-//import 'package:hyrule/screens/creatures.dart';
-//import 'package:hyrule/screens/creatures_details.dart';
-import 'package:hyrule/screens/items.dart';
+
 
 void main() {
   runApp(const Hyrule());
