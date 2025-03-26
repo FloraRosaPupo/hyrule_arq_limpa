@@ -1,1 +1,1 @@
-const String urlApi = 'https://hyrule-api.herokuapp.com/api/entries?category=';
+const String urlApi = 'https://botw-compendium.herokuapp.com/api/v3/compendium/category/';
