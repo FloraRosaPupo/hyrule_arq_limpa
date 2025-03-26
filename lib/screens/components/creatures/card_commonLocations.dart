@@ -6,21 +6,21 @@ class CardCommonlocations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 25,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: Colors.transparent,
-        border: Border.all(color: Colors.white),
-      ),
-      child: Text(
-        'Nome',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15,
+        width: 100,
+        height: 30,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.transparent,
+          border: Border.all(color: Colors.white),
         ),
-      ),
-    );
+        child: const Center(
+          child: Text(
+            'Nome',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+            ),
+          ),
+        ));
   }
 }

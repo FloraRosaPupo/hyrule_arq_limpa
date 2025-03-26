@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:hyrule/screens/categorys.dart';
 //import 'package:hyrule/screens/creatures.dart';
 import 'package:hyrule/screens/creatures_details.dart';
+import 'package:hyrule/screens/items.dart';
 
 void main() {
   runApp(const Hyrule());
@@ -22,7 +23,7 @@ class Hyrule extends StatelessWidget {
             Brightness.dark, //brightness é a luminosidade do tema -> escuro
         useMaterial3: true,
       ),
-      home: CreaturesDetails(),
+      home: const Items(),
     );
     /*Scaffold(
           appBar: AppBar(

@@ -54,15 +54,14 @@ class _CardCreatureState extends State<CardCreature> {
                         ),
                         Container(
                           child: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start   ,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               //consumir da api
                               Text(
                                 'Nome:',
                                 style: TextStyle(
                                   fontSize: 20,
-                                  fontFamily:
-                                      'assets/fonts/Philosopher-Regular.ttf',
+                                  fontFamily: 'Philosopher',
                                 ),
                                 textAlign: TextAlign.start,
                               ),

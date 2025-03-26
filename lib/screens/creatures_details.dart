@@ -17,12 +17,19 @@ class CreaturesDetails extends StatelessWidget {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.75,
                 child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Nome'),
+                    Text(
+                      'Nome',
+                      style: const TextStyle(
+                        fontFamily: 'Philosopher',
+                        fontSize: 30,
+                      ),
+                    ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Wrap(
                       children: [
@@ -30,22 +37,27 @@ class CreaturesDetails extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
-                    Image(image: AssetImage('assets/images/creatures.png')),
+                    Image(
+                      image: AssetImage('assets/images/creatures.png'),
+                      width: 320,
+                      height: 220,
+                    ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Text('Descrição'),
                   ],
                 ),
               ),
               Container(
-                alignment: Alignment.bottomRight,
+                alignment: Alignment.centerRight,
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFF3B4858),),
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color.fromARGB(249, 1, 87, 158),
+                  ),
                   child: IconButton(
                     icon: const Icon(
                       Icons.bookmark,
