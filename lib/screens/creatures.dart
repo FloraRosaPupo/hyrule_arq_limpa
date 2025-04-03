@@ -40,10 +40,14 @@ class Creatures extends StatelessWidget {
                   if (snaphot.hasData) {
                     //tem dados
                     return ListView.builder(
-                        //itemCount: snaphot.data.length,
-                        itemBuilder: (context, index) => CardCreature(
-                              entry: snaphot.data![index],
-                            ));
+                      itemCount: snaphot.data!.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 20.0),
+                        child: CardCreature(
+                          entry: snaphot.data![index],
+                        ),
+                      ),
+                    );
                   }
               }
               return const Center(

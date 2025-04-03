@@ -38,9 +38,15 @@ class Entry {
 
   //json do commonLocations em uma lista de string
   List<String> commonLocationsConvert() {
-    return (jsonDecode(commonLocations) as List<dynamic>)
-        .map((e) => e.toString())
-        .toList();
+    final decoded = commonLocations is String
+        ? jsonDecode(commonLocations)
+        : commonLocations;
+    if (decoded is List) {
+      return decoded.map((e) => e.toString()).toList();
+    } else {
+      return [];
+    }
+      
   }
 
   // Método para criar um objeto Entry a partir de um mapa JSON
