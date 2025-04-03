@@ -38,6 +38,7 @@ class Entry {
 
   //json do commonLocations em uma lista de string
   List<String> commonLocationsConvert() {
+    // ignore: unnecessary_type_check
     final decoded = commonLocations is String
         ? jsonDecode(commonLocations)
         : commonLocations;
