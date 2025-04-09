@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyrule/controllers/api_controller.dart';
 import 'package:hyrule/screens/components/creatures/card_creature.dart';
+import 'package:hyrule/screens/items.dart';
 import 'package:hyrule/utils/consts/categorys.dart';
 
 class Creatures extends StatelessWidget {
@@ -17,8 +18,11 @@ class Creatures extends StatelessWidget {
         title: Text(categories[category]!),
         actions: [
           IconButton(
-            icon: const Icon(Icons.bookmark, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Items()));
+            },
+            icon: const Icon(Icons.bookmark),
           ),
         ],
       ),
@@ -44,6 +48,7 @@ class Creatures extends StatelessWidget {
                       itemBuilder: (context, index) => Padding(
                         padding: const EdgeInsets.only(bottom: 20.0),
                         child: CardCreature(
+                          paginaItem: false,
                           entry: snaphot.data![index],
                         ),
                       ),

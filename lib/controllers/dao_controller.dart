@@ -31,4 +31,6 @@ class DaoController implements DaoWorkflow {
     final EntryDao entryDao = await createDatabase(); //criar o banco de dados
     entryDao.addEntry(entry); //adicionar a entrada
   }
+
+  getAllEntries() {}
 }

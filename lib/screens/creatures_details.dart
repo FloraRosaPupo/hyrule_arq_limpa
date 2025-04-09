@@ -1,14 +1,23 @@
+import 'package:floor/floor.dart';
 import 'package:flutter/material.dart';
+import 'package:hyrule/controllers/dao_controller.dart';
+import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/utils/consts/categorys.dart';
 
 class CreaturesDetails extends StatelessWidget {
-  const CreaturesDetails({super.key});
+  final Entry entry;
+  final DaoController daoController = DaoController();
+
+  CreaturesDetails({super.key, required this.entry});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Detalhes '),
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+          leading: IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: Icon(Icons.arrow_back)),
         ),
         body: Padding(
           padding: EdgeInsets.all(16),
@@ -17,11 +26,11 @@ class CreaturesDetails extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.75,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Nome',
+                      entry.name,
                       style: const TextStyle(
                         fontFamily: 'Philosopher',
                         fontSize: 30,
@@ -30,20 +39,37 @@ class CreaturesDetails extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    
-                    
+                    Padding(
+                      padding: const EdgeInsets.all(4),
+                      child: Wrap(
+                        spacing: 4,
+                        runSpacing: 2,
+                        children: entry
+                            .commonLocationsConvert()
+                            .map((e) => Chip(label: Text(e)))
+                            .toList(),
+                      ),
+                    ),
                     SizedBox(
                       height: 20,
                     ),
-                    Image(
-                      image: AssetImage('assets/images/creatures.png'),
-                      width: 320,
-                      height: 220,
+                    Image.network(
+                      entry.image,
+                      fit: BoxFit.fitHeight,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(
+                          Icons.error,
+                        );
+                      },
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Text('Descrição'),
+                    Text(entry.description,
+                        style: const TextStyle(
+                          fontFamily: 'Philosopher',
+                          fontSize: 16,
+                        )),
                   ],
                 ),
               ),
@@ -54,12 +80,21 @@ class CreaturesDetails extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: const Color.fromARGB(249, 1, 87, 158),
                   ),
-                  child: IconButton(
-                    icon: const Icon(
+                  child: FloatingActionButton(
+                    child: const Icon(
                       Icons.bookmark,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      // Adiciona o item ao banco de dados
+                      daoController.saveEntry(entry: entry);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Item salvo com sucesso!'),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                    },
                   ),
                 ),
               )

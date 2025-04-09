@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:hyrule/controllers/dao_controller.dart';
 import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/screens/creatures_details.dart';
+import 'package:hyrule/screens/items.dart';
 
 class CardCreature extends StatefulWidget {
   final Entry entry;
+  final bool paginaItem;
+  final DaoController daoController = DaoController();
+  final VoidCallback? onRefresh; // Callback para notificar a atualização
 
-  const CardCreature({
-    super.key,
-    required this.entry,
-  });
+  CardCreature(
+      {super.key,
+      required this.entry,
+      required this.paginaItem,
+      this.onRefresh});
 
   @override
   _CardCreatureState createState() => _CardCreatureState();
 }
 
 class _CardCreatureState extends State<CardCreature> {
-  bool isDelete = true; // Inicializa com um valor padrão
+  late bool isDelete = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +30,19 @@ class _CardCreatureState extends State<CardCreature> {
       width: MediaQuery.of(context).size.width * 0.9,
       child: InkWell(
         onTap: () {
-          setState(() {
-            isDelete = !isDelete; // Alterna o valor de isDelete ao clicar
-          });
+          if (widget.paginaItem) {
+            setState(() {
+              isDelete = true;
+              // Alterna o valor de isDelete ao clicar
+            });
+          } else {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CreaturesDetails(
+                          entry: widget.entry,
+                        )));
+          }
         },
         child: Container(
           alignment: Alignment.center,
@@ -118,7 +135,7 @@ class _CardCreatureState extends State<CardCreature> {
                 ],
               ),
               Visibility(
-                visible: !isDelete,
+                visible: isDelete,
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Container(
@@ -131,12 +148,29 @@ class _CardCreatureState extends State<CardCreature> {
                     ),
                     width: 160,
                     height: 300,
-                    child: const Center(
-                      child: Icon(
+                    child: Center(
+                        child: IconButton(
+                      onPressed: () {
+                        widget.daoController.deleteEntry(entry: widget.entry);
+                        setState(() {
+                          isDelete = !isDelete;
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Item salvo com sucesso!'),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                        // Atualiza a lista de itens salvos
+                        if (widget.onRefresh != null) {
+                          widget.onRefresh!();
+                        }
+                      },
+                      icon: Icon(
                         Icons.delete,
                         color: Colors.white,
                       ),
-                    ),
+                    )),
                   ),
                 ),
               ),

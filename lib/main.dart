@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyrule/screens/categorys.dart';
 
-
 void main() {
   runApp(const Hyrule());
 }
