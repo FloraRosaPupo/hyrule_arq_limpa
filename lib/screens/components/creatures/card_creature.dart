@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hyrule/controllers/dao_controller.dart';
 import 'package:hyrule/domain/models/entry.dart';
 import 'package:hyrule/screens/creatures_details.dart';
-import 'package:hyrule/screens/items.dart';
 
 class CardCreature extends StatefulWidget {
   final Entry entry;

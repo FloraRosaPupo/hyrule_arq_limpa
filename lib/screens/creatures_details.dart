@@ -1,8 +1,6 @@
-import 'package:floor/floor.dart';
 import 'package:flutter/material.dart';
 import 'package:hyrule/controllers/dao_controller.dart';
 import 'package:hyrule/domain/models/entry.dart';
-import 'package:hyrule/utils/consts/categorys.dart';
 
 class CreaturesDetails extends StatelessWidget {
   final Entry entry;
