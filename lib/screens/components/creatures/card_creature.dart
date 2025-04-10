@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hyrule/controllers/dao_controller.dart';
 import 'package:hyrule/domain/models/entry.dart';
 import 'package:hyrule/screens/creatures_details.dart';
+import 'package:hyrule/utils/snacks.dart';
 
 class CardCreature extends StatefulWidget {
   final Entry entry;
@@ -154,12 +155,8 @@ class _CardCreatureState extends State<CardCreature> {
                         setState(() {
                           isDelete = !isDelete;
                         });
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Item salvo com sucesso!'),
-                            duration: Duration(seconds: 2),
-                          ),
-                        );
+                        AppSnackBar.showSnackBar(
+                            'Item deletado com sucesso!', context);
                         // Atualiza a lista de itens salvos
                         if (widget.onRefresh != null) {
                           widget.onRefresh!();

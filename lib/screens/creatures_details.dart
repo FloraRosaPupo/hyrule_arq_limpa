@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyrule/controllers/dao_controller.dart';
 import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/utils/snacks.dart';
 
 class CreaturesDetails extends StatelessWidget {
   final Entry entry;
@@ -86,12 +87,8 @@ class CreaturesDetails extends StatelessWidget {
                     onPressed: () {
                       // Adiciona o item ao banco de dados
                       daoController.saveEntry(entry: entry);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Item salvo com sucesso!'),
-                          duration: Duration(seconds: 2),
-                        ),
-                      );
+                      AppSnackBar.showSnackBar(
+                          'Item salvo com sucesso!', context);
                     },
                   ),
                 ),
