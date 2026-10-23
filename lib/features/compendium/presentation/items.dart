@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/controllers/dao_controller.dart';
-import 'package:hyrule/screens/components/creatures/card_creature.dart';
-//import 'package:hyrule/screens/components/card_categorys.dart';
-//import 'package:hyrule/screens/components/creatures/card_commonLocations.dart';
+import 'package:hyrule/features/compendium/presentation/controllers/dao_controller.dart';
+import 'package:hyrule/features/compendium/presentation/components/creatures/card_creature.dart';
 
 class Items extends StatefulWidget {
   Items({super.key});
@@ -21,7 +19,6 @@ class _ItemsState extends State<Items> {
         entries = value; // Atualiza a lista de entradas salvas
       });
     });
-    
   }
 
   @override

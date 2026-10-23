@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/screens/creatures.dart';
-import 'package:hyrule/utils/consts/categorys.dart';
+import 'package:hyrule/features/compendium/presentation/creatures.dart';
+import 'package:hyrule/features/compendium/domain/constants/categorys.dart';
 
 class CardCategorys extends StatefulWidget {
   final String category;
@@ -16,7 +16,10 @@ class _CardCategorysState extends State<CardCategorys> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Creatures(category: widget.category)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Creatures(category: widget.category)));
       },
       child: Container(
         child: Column(

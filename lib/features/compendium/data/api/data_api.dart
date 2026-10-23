@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:hyrule/domain/models/entry.dart';
-import 'package:hyrule/utils/consts/api.dart';
+import 'package:hyrule/features/compendium/domain/models/entry.dart';
+import 'package:hyrule/features/compendium/domain/constants/api.dart';
 
 class DataApi {
   final Dio dio = Dio();

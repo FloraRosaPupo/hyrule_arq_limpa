@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/screens/components/card_categorys.dart';
-import 'package:hyrule/utils/consts/categorys.dart';
+import 'package:hyrule/features/compendium/presentation/components/card_categorys.dart';
+import 'package:hyrule/features/compendium/domain/constants/categorys.dart';
 
 class Categorys extends StatelessWidget {
   const Categorys({super.key});

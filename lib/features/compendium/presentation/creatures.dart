@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/controllers/api_controller.dart';
-import 'package:hyrule/screens/components/creatures/card_creature.dart';
-import 'package:hyrule/screens/items.dart';
-import 'package:hyrule/utils/consts/categorys.dart';
+import 'package:hyrule/features/compendium/presentation/controllers/api_controller.dart';
+import 'package:hyrule/features/compendium/presentation/components/creatures/card_creature.dart';
+import 'package:hyrule/features/compendium/presentation/items.dart';
+import 'package:hyrule/features/compendium/domain/constants/categorys.dart';
 
 class Creatures extends StatelessWidget {
   Creatures({super.key, required this.category});

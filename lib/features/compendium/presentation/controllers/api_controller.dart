@@ -1,6 +1,6 @@
-import 'package:hyrule/data/api/data_api.dart';
-import 'package:hyrule/domain/business/api_workflow.dart';
-import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/features/compendium/data/api/data_api.dart';
+import 'package:hyrule/features/compendium/domain/business/api_workflow.dart';
+import 'package:hyrule/features/compendium/domain/models/entry.dart';
 
 class ApiController implements ApiWorkflow {
   final DataApi dataApi = DataApi();

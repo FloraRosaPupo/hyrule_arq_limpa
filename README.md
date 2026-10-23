@@ -3,7 +3,9 @@
 Consulta de criaturas e itens do universo de Zelda.
 
 ## Stack e organização
-Flutter/Dart, Dio, Floor e SQLite. `domain/` contém modelos e regras; `data/`, API e banco; `screens/`, interface. A consulta depende da disponibilidade da API externa.
+Flutter/Dart, http/Dio, Floor, sqflite e build_runner.
+
+Compêndio reúne domain/data/presentation em uma feature; a separação existente de API, DAO e regras foi preservada dentro dela. Gerador é compatível com o SDK fixado. Não foram adicionadas camadas redundantes sobre a arquitetura existente.
 
 ## Executar
 Use a versão de Flutter registrada em `.github/workflows/ci.yml`.
@@ -26,3 +28,17 @@ Abra uma branch por alteração, descreva o comportamento esperado e inclua test
 
 ## Licença
 Não há licença de distribuição definida neste repositório.
+
+
+## Funcionalidades
+
+- Consulta ao compêndio.
+- categorias e criaturas.
+- favoritos locais.
+
+
+## Organização e manutenção
+
+Compêndio reúne domain/data/presentation em uma feature; a separação existente de API, DAO e regras foi preservada dentro dela. Gerador é compatível com o SDK fixado. Não foram adicionadas camadas redundantes sobre a arquitetura existente.
+
+Veja [a revisão de desenvolvimento](docs/REVISAO.md) para decisões, testes e limites, e [o guia de contribuição](CONTRIBUTING.md) para o fluxo de manutenção.

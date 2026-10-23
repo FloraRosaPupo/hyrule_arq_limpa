@@ -1,6 +1,6 @@
 /*Funcoes */
 import 'package:floor/floor.dart';
-import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/features/compendium/domain/models/entry.dart';
 
 @dao
 abstract class EntryDao {

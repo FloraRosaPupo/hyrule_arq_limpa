@@ -1,8 +1,8 @@
 //Controller do banco de dados -> Atribui a logica de negocio do banco de dados
-import 'package:hyrule/data/dao/database.dart';
-import 'package:hyrule/data/dao/entry_dao.dart';
-import 'package:hyrule/domain/business/dao_workflow.dart';
-import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/features/compendium/data/dao/database.dart';
+import 'package:hyrule/features/compendium/data/dao/entry_dao.dart';
+import 'package:hyrule/features/compendium/domain/business/dao_workflow.dart';
+import 'package:hyrule/features/compendium/domain/models/entry.dart';
 
 class DaoController implements DaoWorkflow {
   //criar o banco de dados

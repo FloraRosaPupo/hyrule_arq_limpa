@@ -1,5 +1,5 @@
 /*Regra de negocio dos Banco de Dados */
-import 'package:hyrule/domain/models/entry.dart';
+import 'package:hyrule/features/compendium/domain/models/entry.dart';
 
 abstract class DaoWorkflow {
   //pegar todos os dados do banco de dados
