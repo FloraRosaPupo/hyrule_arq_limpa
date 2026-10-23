@@ -47,7 +47,6 @@ class Entry {
     } else {
       return [];
     }
-      
   }
 
   // Método para criar um objeto Entry a partir de um mapa JSON

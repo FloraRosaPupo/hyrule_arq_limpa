@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/screens/categorys.dart';
+import 'package:hyrule/features/compendium/presentation/categorys.dart';
 
 void main() {
   runApp(const Hyrule());
