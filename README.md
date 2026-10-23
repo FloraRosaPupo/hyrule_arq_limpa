@@ -1,11 +1,28 @@
-# Hyrule
+# Hyrule — Compêndio e Favoritos
 
-Consulta de criaturas e itens do universo de Zelda.
+## Descrição
 
-## Stack e organização
+Aplicativo Flutter para consultar entradas do compêndio de Hyrule por categoria e manter favoritos locais. Reúne acesso à API, modelos, persistência SQLite e telas dentro da funcionalidade de compêndio.
+
+## Stack e bibliotecas
+
 Flutter/Dart, http/Dio, Floor, sqflite e build_runner.
 
-Compêndio reúne domain/data/presentation em uma feature; a separação existente de API, DAO e regras foi preservada dentro dela. Gerador é compatível com o SDK fixado. Não foram adicionadas camadas redundantes sobre a arquitetura existente.
+Dependências e versões declaradas: [pubspec.yaml](pubspec.yaml).
+
+## Funcionalidades
+
+- Consulta ao compêndio.
+- Categorias e criaturas.
+- Favoritos locais.
+
+## Licença
+
+Não há uma licença de distribuição definida para este repositório. Nenhuma licença MIT, Apache ou equivalente é concedida por este README. As atribuições e os direitos dos materiais de terceiros permanecem preservados.
+
+## Validação e limites
+
+Parsing de entradas e localizações. API e SQLite no dispositivo exigem integração.
 
 ## Executar
 Use a versão de Flutter registrada em `.github/workflows/ci.yml`.
@@ -25,17 +42,6 @@ A CI verifica erros de análise e os testes. Avisos e sugestões continuam visí
 
 ## Contribuir
 Abra uma branch por alteração, descreva o comportamento esperado e inclua testes para regras ou regressões. Mantenha credenciais e arquivos gerados fora do Git.
-
-## Licença
-Não há licença de distribuição definida neste repositório.
-
-
-## Funcionalidades
-
-- Consulta ao compêndio.
-- categorias e criaturas.
-- favoritos locais.
-
 
 ## Organização e manutenção
 
